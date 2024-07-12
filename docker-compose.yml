@@ -1,0 +1,20 @@
+services:
+  roonserver:
+    image: roonserver:latest
+    container_name: roonserver
+    privileged: true
+    network_mode: host
+    environment:
+      TZ: "America/New_York"
+    volumes:
+      - roon-app:/app
+      - roon-data:/data
+      - roon-backups:/backup
+      - ~/music:/music
+    restart: unless-stopped
+    devices:
+      - "/dev/snd:/dev/snd"
+volumes:
+  roon-app:
+  roon-data:
+  roon-backups:
