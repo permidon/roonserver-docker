@@ -9,12 +9,15 @@ services:
     volumes:
       - roon-app:/app
       - roon-data:/data
-      - roon-backups:/backup
+      - roon-backup:/backup
       - ~/music:/music
     restart: unless-stopped
     devices:
       - "/dev/snd:/dev/snd"
 volumes:
   roon-app:
+    name: roon-app
   roon-data:
-  roon-backups:
+    name: roon-data
+  roon-backup:
+    name: roon-backup
