@@ -8,10 +8,10 @@ RUN apt-get update \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
         && truncate -s 0 /var/log/*log
 
-ENV ROON_SERVER_PKG RoonServer_linuxx64.tar.bz2
-ENV ROON_SERVER_URL https://download.roonlabs.net/builds/${ROON_SERVER_PKG}
-ENV ROON_DATAROOT /data
-ENV ROON_ID_DIR /data
+ENV ROON_SERVER_PKG=RoonServer_linuxx64.tar.bz2
+ENV ROON_SERVER_URL=https://download.roonlabs.net/builds/${ROON_SERVER_PKG}
+ENV ROON_DATAROOT=/data
+ENV ROON_ID_DIR=/data
 
 VOLUME [ "/app", "/data", "/music", "/backup" ]
 

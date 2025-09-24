@@ -4,6 +4,8 @@ services:
     container_name: roonserver
     privileged: true
     network_mode: host
+    dns:
+      - 1.1.1.1
     environment:
       TZ: "America/New_York"
     volumes:
